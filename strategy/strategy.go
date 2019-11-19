@@ -59,10 +59,9 @@ func NewStrategy(t string) (res Strategier) {
 	return res
 }
 
-
 type Computer struct {
 	Num1, Num2 int
-	strate Strategier
+	strate     Strategier
 }
 
 func (c *Computer) SetStrategy(strate Strategier) {
