@@ -1,3 +1,5 @@
+// +build !linux
+
 package Singleton
 
 import (
@@ -5,8 +7,9 @@ import (
 	"sync"
 )
 
-// sync.Once可以保证穿进去的函数可以直被执行一次
+func test() {}
 
+// sync.Once可以保证穿进去的函数可以直被执行一次
 func do(o *sync.Once, value *int) {
 	fmt.Println("Start do")
 	o.Do(func() {

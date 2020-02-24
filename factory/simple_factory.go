@@ -20,6 +20,7 @@ func (*helloAPI) Say(name string) string {
 	return fmt.Sprintf("Hello, %s", name)
 }
 
+// 这里最关键的就是这个返回的类型也是API，所以就意味着这个接口的动态类型是不确定的。
 func NewAPI(t int) API {
 	if t == 1 {
 		return &hiAPI{}
