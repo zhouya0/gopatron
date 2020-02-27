@@ -25,7 +25,8 @@ func NewPublisher(publishTimeout time.Duration, buffer int) *Publisher {
 		buffer:      buffer,
 		timeout:     publishTimeout,
 		subscribers: make(map[subscriber]topicFunc),
-		// 这里没有设置读写锁
+		// 这里没有设置读写锁，其实也是不用的
+		// 另外，一定要记住，锁的本质是锁goroutine而不是某个变量。
 	}
 }
 
